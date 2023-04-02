@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiNetCore", "WebApiNetCore\WebApiNetCore.csproj", "{188C347D-882A-4A65-8EAA-CFE1C7616DCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkPanel", "BenchmarkPanel\BenchmarkPanel.csproj", "{BA39A520-55E5-4DA2-B8B3-F74DE26430F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{188C347D-882A-4A65-8EAA-CFE1C7616DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{188C347D-882A-4A65-8EAA-CFE1C7616DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{188C347D-882A-4A65-8EAA-CFE1C7616DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{188C347D-882A-4A65-8EAA-CFE1C7616DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA39A520-55E5-4DA2-B8B3-F74DE26430F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA39A520-55E5-4DA2-B8B3-F74DE26430F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA39A520-55E5-4DA2-B8B3-F74DE26430F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA39A520-55E5-4DA2-B8B3-F74DE26430F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C8CAFAA-D273-4357-94B4-CD15E585CAC7}
+	EndGlobalSection
+EndGlobal

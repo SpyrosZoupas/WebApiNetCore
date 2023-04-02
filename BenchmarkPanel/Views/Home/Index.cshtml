@@ -1,0 +1,13 @@
+﻿@model TimeSpan
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Performance Tests</h1>
+    <p>Execution Time: @Model</p>
+    <a asp-action="DatabaseIO" class="btn btn-primary">DatabaseIO</a>
+    <a asp-action="DiscIO" class="btn btn-primary">DiscIO</a>
+    <a asp-action="GarbageCollection" class="btn btn-primary">Garbage Collection</a>
+    <a asp-action="ThreadPerformance" class="btn btn-primary">Thread Performance</a>
+</div>

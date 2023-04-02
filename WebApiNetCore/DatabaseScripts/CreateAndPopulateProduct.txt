@@ -1,0 +1,24 @@
+﻿USE [TestDatabase]
+
+CREATE TABLE [PRODUCT] (
+    Id INT PRIMARY KEY,
+    Name NVARCHAR(50),
+    Description NVARCHAR(MAX),
+    Price DECIMAL(18, 2)
+)
+
+DECLARE @rowCount INT = 1
+DECLARE @numRowsToAdd INT = 2000
+
+WHILE @rowCount <= @numRowsToAdd
+BEGIN
+    DECLARE @id INT = @rowCount
+    DECLARE @name NVARCHAR(50) = 'Product ' + CAST(@rowCount AS NVARCHAR)
+    DECLARE @description NVARCHAR(MAX) = 'This is the description for product ' + CAST(@rowCount AS NVARCHAR)
+    DECLARE @price DECIMAL(18, 2) = 10.00 + @rowCount
+
+    INSERT INTO [PRODUCT] (Id, Name, Description, Price)
+    VALUES (@id, @name, @description, @price)
+
+    SET @rowCount = @rowCount + 1
+END
