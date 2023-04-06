@@ -24,6 +24,11 @@ namespace BenchmarkPanel.Controllers
             return View();
         }
 
+        public IActionResult Php()
+        {
+            return View("php");
+        }
+
         // GET: HomeController/Details/
         // 
         public IActionResult DatabaseIO()
@@ -86,7 +91,64 @@ namespace BenchmarkPanel.Controllers
             }
         }
 
+        public IActionResult DatabaseIOLaravel()
+        {
+            HttpResponseMessage response = _httpClient.GetAsync("http://127.0.0.1:8000/api/dbIO").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string responseContent = response.Content.ReadAsStringAsync().Result;
+                float time = JsonSerializer.Deserialize<float>(responseContent);
+                return View("php", time);
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
 
+        public IActionResult DiscIOLaravel()
+        {
+            HttpResponseMessage response = _httpClient.GetAsync("http://127.0.0.1:8000/api/discIO").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string responseContent = response.Content.ReadAsStringAsync().Result;
+                float time = JsonSerializer.Deserialize<float>(responseContent);
+                return View("php", time);
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
 
+        public IActionResult GarbageCollectionLaravel()
+        {
+            HttpResponseMessage response = _httpClient.GetAsync("http://127.0.0.1:8000/api/gc").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string responseContent = response.Content.ReadAsStringAsync().Result;
+                float time = JsonSerializer.Deserialize<float>(responseContent);
+                return View("php", time);
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult ThreadPerformanceLaravel()
+        {
+            HttpResponseMessage response = _httpClient.GetAsync("http://127.0.0.1:8000/api/tp").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string responseContent = response.Content.ReadAsStringAsync().Result;
+                float time = JsonSerializer.Deserialize<float>(responseContent);
+                return View("php", time);
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
     }
 }
