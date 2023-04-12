@@ -24,13 +24,21 @@ namespace BenchmarkPanel.Controllers
             return View();
         }
 
-        public IActionResult Php()
+        public IActionResult Laravel()
         {
-            return View("php");
+            return View("laravel");
         }
 
-        // GET: HomeController/Details/
-        // 
+        public IActionResult Nodejs()
+        {
+            return View("nodejs");
+        }
+
+        public IActionResult Asp()
+        {
+            return View("asp");
+        }
+
         public IActionResult DatabaseIO()
         {
             HttpResponseMessage response = _httpClient.GetAsync("/api/Product/DatabaseIO").Result;
@@ -150,5 +158,67 @@ namespace BenchmarkPanel.Controllers
                 return View("Error");
             }
         }
+
+        public IActionResult DatabaseIONodejs()
+        {
+            HttpResponseMessage response = _httpClient.GetAsync("http://localhost:3000/dbIO").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string responseContent = response.Content.ReadAsStringAsync().Result;
+                float time = JsonSerializer.Deserialize<float>(responseContent);
+                return View("nodejs", time);
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult DiscIONodejs()
+        {
+            HttpResponseMessage response = _httpClient.GetAsync("http://localhost:3000/discIO").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string responseContent = response.Content.ReadAsStringAsync().Result;
+                float time = JsonSerializer.Deserialize<float>(responseContent);
+                return View("nodejs", time);
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult GarbageCollectionNodejs()
+        {
+            HttpResponseMessage response = _httpClient.GetAsync("http://localhost:3000/gc").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string responseContent = response.Content.ReadAsStringAsync().Result;
+                float time = JsonSerializer.Deserialize<float>(responseContent);
+                return View("nodejs", time);
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult ThreadPerformanceNodejs()
+        {
+            HttpResponseMessage response = _httpClient.GetAsync("http://localhost:3000/tp").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string responseContent = response.Content.ReadAsStringAsync().Result;
+                float time = JsonSerializer.Deserialize<float>(responseContent);
+                return View("nodejs", time);
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+
     }
 }

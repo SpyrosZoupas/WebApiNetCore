@@ -1,0 +1,15 @@
+﻿@model float
+@{
+    ViewData["Title"] = "Node.js";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Node.js Performance Tests</h1>
+    <p>Execution Time: @Model</p>
+    <a asp-action="DatabaseIONodejs" class="btn btn-primary">DatabaseIO</a>
+    <a asp-action="DiscIONodejs" class="btn btn-primary">DiscIO</a>
+    <a asp-action="GarbageCollectionNodejs" class="btn btn-primary">Garbage Collection</a>
+    <a asp-action="ThreadPerformanceNodejs" class="btn btn-primary">Thread Performance</a>
+    <a asp-action="Index" class="btn btn-primary">.NetCore</a>
+    <a asp-action="Php" class="btn btn-primary">php</a>
+</div>

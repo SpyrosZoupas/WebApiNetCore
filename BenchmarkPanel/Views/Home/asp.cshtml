@@ -1,0 +1,22 @@
+﻿@model float
+@{
+    ViewData["Title"] = "asp";
+}
+
+<h1>ASP.NET</h1>
+
+<head>
+    <link rel="style" href="~/style.css">
+</head>
+<body>
+    <div class="grid-container">
+        @for (int i = 0; i < 2000; i++)
+        {
+            <div class="grid-item">
+                <img src="/highRes.jpg" alt="Image">
+            </div>
+        }
+    </div>
+</body>
+
+
